@@ -19,6 +19,7 @@ export const CHAIN_ID_TO_URL_PARAM: Record<UniverseChainId, string> = {
   [UniverseChainId.Celo]: 'celo',
   [UniverseChainId.Linea]: 'linea',
   [UniverseChainId.Monad]: 'monad',
+  [UniverseChainId.MonadTestnet]: 'monad_testnet',
   [UniverseChainId.Optimism]: 'optimism',
   [UniverseChainId.Polygon]: 'polygon',
   [UniverseChainId.Sepolia]: 'ethereum_sepolia',

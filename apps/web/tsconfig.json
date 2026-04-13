@@ -5,12 +5,15 @@
     "alwaysStrict": true,
     "composite": true,
     "declarationMap": false,
-    "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmit": true,
@@ -26,13 +29,24 @@
     "strict": true,
     "strictNullChecks": true,
     "target": "ESNext",
-    "types": ["chrome", "vitest/globals"],
+    "types": [
+      "chrome",
+      "vitest/globals"
+    ],
     "useUnknownInCatchVariables": false,
     "paths": {
-      "~/*": ["./src/*"],
-      "ui/src/*": ["../../packages/ui/src/*"],
-      "utilities/src/*": ["../../packages/utilities/src/*"],
-      "uniswap/src/*": ["../../packages/uniswap/src/*"]
+      "~/*": [
+        "./src/*"
+      ],
+      "ui/src/*": [
+        "../../packages/ui/src/*"
+      ],
+      "utilities/src/*": [
+        "../../packages/utilities/src/*"
+      ],
+      "uniswap/src/*": [
+        "../../packages/uniswap/src/*"
+      ]
     }
   },
   "include": [
@@ -44,7 +58,9 @@
     "scripts/*",
     "vite/*"
   ],
-  "exclude": ["scripts/build-vercel.ts"],
+  "exclude": [
+    "scripts/build-vercel.ts"
+  ],
   "references": [
     {
       "path": "../../packages/utilities"

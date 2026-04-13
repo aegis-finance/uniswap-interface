@@ -254,7 +254,12 @@ export function getEnabledChains({
       return false
     }
 
-    return true
+    if (chainInfo.id === UniverseChainId.Monad || chainInfo.id === UniverseChainId.MonadTestnet) {
+      // Temporary hard filter for Monad chains
+      return true
+    }
+
+    return false
   })
 
   // Extract chain IDs and GQL chains from filtered results
@@ -283,7 +288,7 @@ function getDefaultChainId({
     return UniverseChainId.Solana
   }
 
-  return isTestnetModeEnabled ? UniverseChainId.Sepolia : UniverseChainId.Mainnet
+  return isTestnetModeEnabled ? UniverseChainId.MonadTestnet : UniverseChainId.Monad
 }
 
 /** Returns all stablecoins for a given chainId. */

@@ -20,6 +20,7 @@ import { SOLANA_CHAIN_INFO } from 'uniswap/src/features/chains/svm/info/solana'
 import { UniverseChainId, UniverseChainInfo } from 'uniswap/src/features/chains/types'
 import { Platform } from 'uniswap/src/features/platforms/types/Platform'
 import { getNonEmptyArrayOrThrow } from 'utilities/src/primitives/array'
+import { MONAD_TESTNET_CHAIN_INFO } from './evm/info/monad-testnet'
 
 export function getChainInfo(chainId: UniverseChainId): UniverseChainInfo {
   return UNIVERSE_CHAIN_INFO[chainId]
@@ -47,6 +48,7 @@ export const ORDERED_CHAINS = [
   ZKSYNC_CHAIN_INFO,
   SEPOLIA_CHAIN_INFO,
   UNICHAIN_SEPOLIA_CHAIN_INFO,
+  MONAD_TESTNET_CHAIN_INFO,
 ] as const satisfies UniverseChainInfo[]
 
 type ConstChainInfo<P extends Platform = Platform> = Extract<(typeof ORDERED_CHAINS)[number], { platform: P }>
@@ -97,6 +99,7 @@ export const UNIVERSE_CHAIN_INFO = {
   // TESTNET
   [UniverseChainId.Sepolia]: SEPOLIA_CHAIN_INFO,
   [UniverseChainId.UnichainSepolia]: UNICHAIN_SEPOLIA_CHAIN_INFO,
+  [UniverseChainId.MonadTestnet]: MONAD_TESTNET_CHAIN_INFO,
 
   // SVM
   [UniverseChainId.Solana]: SOLANA_CHAIN_INFO,

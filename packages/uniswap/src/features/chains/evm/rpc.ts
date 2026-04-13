@@ -73,7 +73,60 @@ export function getQuicknodeChainIdPathSuffix(chainId: UniverseChainId): string 
 export function getQuicknodeEndpointUrl(chainId: UniverseChainId): string {
   const quicknodeChainId = getQuicknodeChainId(chainId)
 
-  return `https://${config.quicknodeEndpointName}${quicknodeChainId ? `.${quicknodeChainId}` : ''}.quiknode.pro/${config.quicknodeEndpointToken}${getQuicknodeChainIdPathSuffix(chainId)}`
+  return `https://${config.quicknodeEndpointName}${quicknodeChainId ? `.${quicknodeChainId}` : ''}.quiknode.pro/${
+    config.quicknodeEndpointToken
+  }${getQuicknodeChainIdPathSuffix(chainId)}`
+}
+
+export function getInfuraChainId(chainId: UniverseChainId): string {
+  switch (chainId) {
+    case UniverseChainId.Mainnet:
+      return 'mainnet'
+    case UniverseChainId.ArbitrumOne:
+      return 'arbitrum-mainnet'
+    case UniverseChainId.Avalanche:
+      return 'avalanche-mainnet'
+    case UniverseChainId.Base:
+      return 'base-mainnet'
+    case UniverseChainId.Blast:
+      return 'blast-mainnet'
+    case UniverseChainId.Bnb:
+      return 'bsc-mainnet'
+    case UniverseChainId.Celo:
+      return 'celo-mainnet'
+    case UniverseChainId.Linea:
+      return 'linea-mainnet'
+    case UniverseChainId.Monad:
+      return 'monad-mainnet'
+    case UniverseChainId.MonadTestnet:
+      return 'monad-testnet'
+    case UniverseChainId.Optimism:
+      return 'optimism-mainnet'
+    case UniverseChainId.Polygon:
+      return 'polygon-mainnet'
+    case UniverseChainId.Sepolia:
+      return 'sepolia'
+    case UniverseChainId.Unichain:
+      return 'unichain-mainnet'
+    case UniverseChainId.UnichainSepolia:
+      return 'unichain-sepolia'
+    case UniverseChainId.WorldChain:
+      return 'worldchain-mainnet'
+    case UniverseChainId.XLayer:
+      return 'xlayer-mainnet'
+    case UniverseChainId.Zksync:
+      return 'zksync-mainnet'
+    case UniverseChainId.Zora:
+      return 'zora-mainnet'
+    default:
+      throw new Error(`Chain ${chainId} does not have a corresponding Infura chain ID`)
+  }
+}
+
+export function getInfuraEndpointUrl(chainId: UniverseChainId): string {
+  const infuraChainId = getInfuraChainId(chainId)
+
+  return `https://${infuraChainId}.infura.io/v3/${config.infuraKey}`
 }
 
 export function getPlaywrightRpcUrls(url: string): { [key in RPCType]: { http: string[] } } {
