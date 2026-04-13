@@ -241,9 +241,7 @@
   "workspaces": [
     "apps/*",
     "packages/*",
-    "config/*",
-    "tools/uniswap-nx",
-    "labs/*"
+    "config/*"
   ],
   "patchedDependencies": {
     "multiformats@9.9.0": "patches/multiformats@9.9.0.patch",
