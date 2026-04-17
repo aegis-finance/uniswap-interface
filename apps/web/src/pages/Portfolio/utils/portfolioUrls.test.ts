@@ -32,10 +32,6 @@ describe('buildPortfolioUrl', () => {
       expect(buildPortfolioUrl({ tab: PortfolioTab.Defi })).toBe('/portfolio/defi')
     })
 
-    it('should return nfts path for Nfts tab', () => {
-      expect(buildPortfolioUrl({ tab: PortfolioTab.Nfts })).toBe('/portfolio/nfts')
-    })
-
     it('should return activity path for Activity tab', () => {
       expect(buildPortfolioUrl({ tab: PortfolioTab.Activity })).toBe('/portfolio/activity')
     })
@@ -123,11 +119,11 @@ describe('buildPortfolioUrl', () => {
     it('should return external wallet tab path with chain param', () => {
       expect(
         buildPortfolioUrl({
-          tab: PortfolioTab.Nfts,
+          tab: PortfolioTab.Defi,
           chainId: UniverseChainId.Mainnet,
           externalAddress: SAMPLE_SEED_ADDRESS_4,
         }),
-      ).toBe(`/portfolio/${SAMPLE_SEED_ADDRESS_4}/nfts?chain=ethereum`)
+      ).toBe(`/portfolio/${SAMPLE_SEED_ADDRESS_4}/defi?chain=ethereum`)
     })
 
     it('should return external wallet overview path with chain param for Overview tab', () => {
@@ -166,10 +162,6 @@ describe('pathToPortfolioTab', () => {
       expect(pathToPortfolioTab('/portfolio/defi')).toBe(PortfolioTab.Defi)
     })
 
-    it('should return Nfts for /portfolio/nfts', () => {
-      expect(pathToPortfolioTab('/portfolio/nfts')).toBe(PortfolioTab.Nfts)
-    })
-
     it('should return Activity for /portfolio/activity', () => {
       expect(pathToPortfolioTab('/portfolio/activity')).toBe(PortfolioTab.Activity)
     })
@@ -186,10 +178,6 @@ describe('pathToPortfolioTab', () => {
 
     it('should return Defi for external wallet defi path', () => {
       expect(pathToPortfolioTab(`/portfolio/${SAMPLE_SEED_ADDRESS_1}/defi`)).toBe(PortfolioTab.Defi)
-    })
-
-    it('should return Nfts for external wallet nfts path', () => {
-      expect(pathToPortfolioTab(`/portfolio/${SAMPLE_SEED_ADDRESS_1}/nfts`)).toBe(PortfolioTab.Nfts)
     })
 
     it('should return Activity for external wallet activity path', () => {

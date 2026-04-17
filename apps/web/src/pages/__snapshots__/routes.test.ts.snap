@@ -349,7 +349,6 @@ exports[`Routes > router definition should match snapshot 1`] = `
       ":walletAddress",
       ":walletAddress/tokens",
       ":walletAddress/defi",
-      ":walletAddress/nfts",
       ":walletAddress/activity",
     ],
     "path": "/portfolio",

@@ -418,7 +418,6 @@ export const routes: RouteDefinition[] = [
       ':walletAddress',
       ':walletAddress/tokens',
       ':walletAddress/defi',
-      ':walletAddress/nfts',
       ':walletAddress/activity',
     ],
   }),

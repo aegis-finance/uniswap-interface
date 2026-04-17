@@ -39,7 +39,6 @@ export function pathToPortfolioTab(path: string): PortfolioTab | undefined {
     '/portfolio': PortfolioTab.Overview,
     '/portfolio/tokens': PortfolioTab.Tokens,
     '/portfolio/defi': PortfolioTab.Defi,
-    '/portfolio/nfts': PortfolioTab.Nfts,
     '/portfolio/activity': PortfolioTab.Activity,
   }
 

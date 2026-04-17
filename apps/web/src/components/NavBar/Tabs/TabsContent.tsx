@@ -80,7 +80,7 @@ export const useTabsContent = (): TabsSection[] => {
     {
       title: t('common.explore'),
       href: '/explore',
-      isActive: pathname.startsWith('/explore') || pathname.startsWith('/nfts'),
+      isActive: pathname.startsWith('/explore'),
       icon: <Compass color="$accent1" size="$icon.20" />,
       elementName: ElementName.NavbarExploreTab,
       items: [
@@ -182,15 +182,6 @@ export const useTabsContent = (): TabsSection[] => {
               },
             ]
           : []),
-        {
-          label: t('portfolio.nfts.title'),
-          href: buildPortfolioUrl({
-            tab: PortfolioTab.Nfts,
-            chainId: portfolioChainId,
-          }),
-          internal: true,
-          elementName: ElementName.NavbarPortfolioDropdownNfts,
-        },
         {
           label: t('portfolio.activity.title'),
           href: buildPortfolioUrl({
