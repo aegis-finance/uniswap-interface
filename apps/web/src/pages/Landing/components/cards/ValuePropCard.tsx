@@ -34,7 +34,6 @@ export default function ValuePropCard(props: ValuePropCardProps) {
       width="100%"
       overflow="hidden"
       minHeight={240}
-      maxWidth="calc(50% - 8px)"
       containerType="normal"
       group="card"
       tag="a"

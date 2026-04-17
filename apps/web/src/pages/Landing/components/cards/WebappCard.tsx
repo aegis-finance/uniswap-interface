@@ -203,7 +203,7 @@ export function WebappCard() {
 
   return (
     <ValuePropCard
-      to="/tokens/ethereum"
+      to="/tokens/monad"
       minHeight={500}
       color={primary}
       $theme-dark={{
@@ -212,7 +212,6 @@ export function WebappCard() {
       $theme-light={{
         backgroundColor: 'rgba(176, 207, 252, 0.04)',
       }}
-      title={<PillButton color={primary} label={t('common.webApp')} icon={<Computer size="24px" fill={primary} />} />}
       subtitle={t('landing.swapSubtitle')}
       bodyText={
         isUnificationCopyEnabled

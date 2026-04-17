@@ -17,9 +17,7 @@ const Fold = forwardRef<HTMLDivElement>(function Fold(_props, scrollAnchor) {
       maxWidth="100vw"
       ref={scrollAnchor}
     >
-      <Stats />
       <AppsOverview />
-      <NewsletterEtc />
       <Footer />
     </Flex>
   )
